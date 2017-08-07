@@ -13,3 +13,64 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+.split {
+  height: 90vh;
+  margin-left: -15px;
+  margin-right: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  & h2 {
+    margin: 0;
+    color: #FFF;
+    font-size: 60px;
+  }
+  & .split-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+.bg-wine {
+  background-color: #a31818;
+  background-image: url('glass_wine.svg');
+}
+.bg-beer {
+  background-color: $beer-light;
+  background-image: url('glass_beer.svg');
+}
+.card-beer {
+  height: 8em;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: -15px;
+  margin-right: -15px;
+  position: relative;
+  & .title {
+    margin: 0;
+    padding: 10px 5px 5px 5px;
+  }
+  & .style {
+    margin: 0;
+    padding: 0px 5px;
+  }
+  & .card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  & .rating {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 14px;
+  }
+}
+
