@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+gem 'country_select'
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'

@@ -21,6 +21,10 @@ module BeerOrWine
     config.generators do |generate|
       generate.assets false
       generate.helper false
+
+      config.time_zone = 'Paris'
+      config.i18n.default_locale = :fr
+      config.i18n.available_locales = [:fr]
     end
 
     # Settings in config/environments/* take precedence over those specified here.
