@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :beers
+
+  mount Attachinary::Engine => "/attachinary"
 end

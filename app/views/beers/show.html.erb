@@ -5,6 +5,9 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
+    <% if @beer.photo? %>
+      <%= cl_image_tag @beer.photo.path, width: 200, height: 300, crop: :fill %>
+    <% end %>
     <p><%= @beer.brewery %></p>
     <p><%= @beer.style %></p>
     <p><%= @beer.country %></p>
