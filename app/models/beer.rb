@@ -10,7 +10,7 @@ class Beer < ApplicationRecord
   validates :name, presence: { allow_blank: false }
   validates :style, inclusion: { in: self.styles, allow_nil: true }
   validates :country, inclusion: { in: ISO3166::Country.codes, allow_nil: true }
-  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
+  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5, allow_nil: true }
 
   def self.color_codes
     [
@@ -20,13 +20,5 @@ class Beer < ApplicationRecord
       '#001818', '#303030', '#483030', '#C09048', '#786048', '#F0F0C0', '#F7E291', '#F0D878',
       '#F0C030'
     ]
-  end
-
-  def pretty_country
-    ISO3166::Country[country].translation(I18n.locale)
-  end
-
-  def rated?
-    rating.present?
   end
 end

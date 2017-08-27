@@ -1,0 +1,11 @@
+<div class="row">
+  <% @wines.each do |wine| %>
+    <div class="col-xs-12">
+      <%= render 'wines/card', wine: wine %>
+    </div>
+  <% end %>
+</div>
+<%= link_to new_wine_path, class: "btn btn-danger btn-add" do %>
+  <span>+</span>
+<% end %>
+

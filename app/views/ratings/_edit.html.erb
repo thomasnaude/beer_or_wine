@@ -1,0 +1,15 @@
+<h1 class="text-center"><%= drink.name %></h1>
+<p><%= rate_this(drink) %></p>
+
+<%= simple_form_for drink do |f| %>
+  <%= f.input(
+    :rating,
+    as: :select,
+    collection: 1..5,
+    input_html: { class: "rating-stars" },
+    wrapper_html: { class: "stars--x2"},
+    label: false
+  ) %>
+  <br>
+  <%= f.button :submit, "Valider", class: "btn btn-danger" %>
+<% end %>
