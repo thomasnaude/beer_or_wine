@@ -3,5 +3,6 @@
   <%= f.input :brewery %>
   <%= f.input :style, collection: Beer.styles %>
   <%= f.input :country, priority: [ "France" ] %>
+  <%= f.input :photo, as: :attachinary %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

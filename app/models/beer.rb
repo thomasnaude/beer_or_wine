@@ -1,4 +1,6 @@
 class Beer < ApplicationRecord
+  has_attachment :photo
+
   STYLES_FILEPATH = Rails.root.join('data', 'beer_styles.yml')
 
   def self.styles
