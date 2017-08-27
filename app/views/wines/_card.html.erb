@@ -1,8 +1,10 @@
 <div class="card bg-wine" style="<%= card_background_image(wine) %>">
   <div class="card-category"><%= wine.color %></div>
-  <div class="card-description">
-    <h2><%= wine.name %></h2>
-    <p><%= stars(wine.rating) %></p>
+  <div class="card-body">
+    <div class="card-description">
+      <h2><%= wine.name %></h2>
+      <p><%= stars(wine.rating) %></p>
+    </div>
   </div>
   <%= link_to "", wine, class: "card-link" %>
 </div>
