@@ -1,0 +1,10 @@
+<%= simple_form_for wine do |f| %>
+  <%= f.input :name, label: false, placeholder: "Nom" %>
+  <%= f.input :appellation, label: false, placeholder: "Appellation" %>
+  <%= f.input :color, collection: Wine.colors, label: false, placeholder: "Couleur" %>
+  <%= f.input :year, label: "Année" %>
+  <%= f.input :country, priority: [ "France" ], label: false %>
+  <%= f.input :stock, input_html: { min: 0 } %>
+  <%= f.input :photo, as: :attachinary %>
+  <%= f.button :submit, "Ajouter", class: "btn btn-danger" %>
+<% end %>

@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resource :rating, only: :edit, module: :beers
   end
 
+  resources :wines do
+    resource :rating, only: :edit, module: :wines
+  end
+
   mount Attachinary::Engine => "/attachinary"
 end
