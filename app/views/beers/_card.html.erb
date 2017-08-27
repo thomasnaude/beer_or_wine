@@ -2,13 +2,7 @@
   <div class="card-category"><%= beer.style %></div>
   <div class="card-description">
     <h2><%= beer.name %></h2>
-    <p>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star-o" aria-hidden="true"></i>
-      <i class="fa fa-star-o" aria-hidden="true"></i>
-    </p>
+    <p><%= stars(beer.rating) %></p>
   </div>
   <%= link_to "", beer, class: "card-link" %>
 </div>
