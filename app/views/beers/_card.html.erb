@@ -1,8 +1,10 @@
 <div class="card bg-beer" style="<%= card_background_image(beer) %>">
   <div class="card-category"><%= beer.style %></div>
-  <div class="card-description">
-    <h2><%= beer.name %></h2>
-    <p><%= stars(beer.rating) %></p>
+  <div class="card-body">
+    <div class="card-description">
+      <h2><%= beer.name %></h2>
+      <p><%= stars(beer.rating) %></p>
+    </div>
   </div>
   <%= link_to "", beer, class: "card-link" %>
 </div>
