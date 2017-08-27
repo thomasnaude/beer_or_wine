@@ -21,4 +21,8 @@ class Beer < ApplicationRecord
       '#F0C030'
     ]
   end
+
+  def pretty_country
+    ISO3166::Country[country].translation(I18n.locale)
+  end
 end

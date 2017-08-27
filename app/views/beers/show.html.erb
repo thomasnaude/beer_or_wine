@@ -1,17 +1,33 @@
 <div class="row">
   <div class="col-xs-12">
-    <h1><%= @beer.name %></h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <% if @beer.photo? %>
-      <%= cl_image_tag @beer.photo.path %>
-    <% end %>
-    <p><%= @beer.brewery %></p>
-    <p><%= @beer.style %></p>
-    <p><%= @beer.country %></p>
-    <%= link_to "Modifier", edit_beer_path(@beer) %>
-    <%= link_to "< Retour", beers_path %>
+    <div class="wrapper-white">
+      <h1 class="text-center">
+        <%= @beer.name %>
+        <%= link_to edit_beer_path(@beer) do %>
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        <% end %>
+      </h1>
+      <p>
+        <% if @beer.photo? %>
+          <%= cl_image_tag @beer.photo.path, class: "img-responsive" %>
+        <% end %>
+      </p>
+      <p>
+        <%= stars(@beer.rating) %>
+      </p>
+      <p>
+        <i class="fa fa-industry" aria-hidden="true"></i>
+        Brasserie : <%= @beer.brewery %>
+      </p>
+      <p>
+        <i class="fa fa-beer" aria-hidden="true"></i>
+        Style : <%= @beer.style %>
+      </p>
+      <p>
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        Pays : <%= @beer.pretty_country %>
+      </p>
+      <%= link_to "< Retour", beers_path, class: "btn btn-danger" %>
+    </div>
   </div>
 </div>
