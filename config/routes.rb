@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'drink/index'
+
   devise_for :users
   root to: 'pages#home'
 
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   resources :wines do
     resource :rating, only: :edit, module: :wines
   end
+
+  resources :drinks, only: :index
 
   mount Attachinary::Engine => "/attachinary"
 end
