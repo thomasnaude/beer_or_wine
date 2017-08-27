@@ -1,9 +1,9 @@
 module ApplicationHelper
-  def stars(rating)
-    return "Noter cette bière" if rating.nil?
+  def stars(rating, options = {})
+    return if rating.nil?
     stars = []
-    rating.times { stars << '<i class="fa fa-star" aria-hidden="true"></i>' }
-    (5 - rating).times { stars << '<i class="fa fa-star-o" aria-hidden="true"></i>' }
+    rating.times { stars << '<i class="fa fa-star stars #{options[:class]}" aria-hidden="true"></i>' }
+    (5 - rating).times { stars << '<i class="fa fa-star stars--o #{options[:class]}" aria-hidden="true"></i>' }
     stars.join().html_safe
   end
 
