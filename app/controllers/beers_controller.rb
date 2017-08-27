@@ -2,7 +2,7 @@ class BeersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :new, :create, :edit, :update]
 
   def index
-    @beers = Beer.all
+    @beers = Beer.all.order(rating: :desc)
   end
 
   def show
@@ -42,6 +42,6 @@ class BeersController < ApplicationController
   end
 
   def beer_params
-    params.require(:beer).permit(:name, :brewery, :style, :country, :photo)
+    params.require(:beer).permit(:name, :brewery, :style, :country, :photo, :rating)
   end
 end

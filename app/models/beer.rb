@@ -10,6 +10,7 @@ class Beer < ApplicationRecord
   validates :name, presence: { allow_blank: false }
   validates :style, inclusion: { in: self.styles, allow_nil: true }
   validates :country, inclusion: { in: ISO3166::Country.codes, allow_nil: true }
+  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
 
   def self.color_codes
     [
