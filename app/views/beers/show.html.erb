@@ -3,9 +3,11 @@
     <div class="wrapper-white">
       <h1 class="text-center">
         <%= @beer.name %>
-        <%= link_to edit_beer_path(@beer) do %>
-          <i class="fa fa-pencil" aria-hidden="true"></i>
-        <% end %>
+        <small>
+          <%= link_to edit_beer_path(@beer) do %>
+            <i class="fa fa-pencil icon" aria-hidden="true"></i>
+          <% end %>
+        </small>
       </h1>
       <p>
         <% if @beer.photo? %>
@@ -13,7 +15,14 @@
         <% end %>
       </p>
       <p>
-        <%= stars(@beer.rating) %>
+        <% if @beer.rated? %>
+          <%= stars(@beer.rating, class: "stars--x2") %>
+          <%= link_to edit_beer_rating_path(@beer) do %>
+            <i class="fa fa-pencil icon" aria-hidden="true"></i>
+          <% end %>
+        <% else %>
+          <%= link_to "Noter cette bière", edit_beer_rating_path(@beer) %>
+        <% end %>
       </p>
       <p>
         <i class="fa fa-industry" aria-hidden="true"></i>

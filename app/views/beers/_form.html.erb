@@ -1,9 +1,8 @@
 <%= simple_form_for beer do |f| %>
-  <%= f.input :name %>
-  <%= f.input :brewery %>
-  <%= f.input :style, collection: Beer.styles %>
-  <%= f.input :country, priority: [ "France" ] %>
-  <%= f.input :rating, as: :select, collection: 1..5, input_html: { class: "rating-stars" } %>
+  <%= f.input :name, label: false, placeholder: "Nom" %>
+  <%= f.input :brewery, label: false, placeholder: "Brasseur" %>
+  <%= f.input :style, collection: Beer.styles, label: false, placeholder: "Style" %>
+  <%= f.input :country, priority: [ "France" ], label: false %>
   <%= f.input :photo, as: :attachinary %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.button :submit, "Ajouter", class: "btn btn-danger" %>
 <% end %>
