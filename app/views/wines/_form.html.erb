@@ -1,7 +1,16 @@
 <%= simple_form_for wine do |f| %>
   <div class="panel panel--middle">
     <%= f.input :name, label: "Nom" %>
-    <%= f.input :appellation, label: "Appellation" %>
+    <%= f.input(
+      :appellation,
+      label: "Appellation",
+      input_html: {
+        data: {
+          autocomplete: :appellation,
+          url: wines_autocomplete_appellation_path
+        }
+      }
+    ) %>
     <%= f.input :color, collection: Wine.colors, label: "Couleur" %>
     <%= f.input :year, label: "Année" %>
     <%= f.input :country, priority: [ "France" ], label: "Pays" %>
