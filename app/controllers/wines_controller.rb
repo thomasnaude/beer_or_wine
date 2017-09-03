@@ -1,6 +1,4 @@
 class WinesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :new, :create, :edit, :update]
-
   def index
     @wines = Wine.all.order(rating: :desc)
   end
