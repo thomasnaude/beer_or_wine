@@ -1,0 +1,37 @@
+.panel {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #FFF;
+  overflow: hidden;
+  &--beer {
+    background-color: $beer-light;
+    color: #FFF;
+  }
+  &--wine {
+    background-color: $wine;
+    color: #FFF;
+  }
+  &--top {
+    margin-top: 25px;
+    margin-bottom: 0;
+    border-radius: 2px 2px 0 0;
+    border-bottom: none;
+  }
+  &--middle {
+    border-bottom: none;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  &--bottom {
+    border-radius: 0 0 2px 2px;
+  }
+  &__title {
+    margin: 0;
+    text-align: center;
+  }
+  &__btn {
+    border: 1px solid #e3e3e3;
+  }
+}

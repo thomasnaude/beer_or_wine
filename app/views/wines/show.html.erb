@@ -1,46 +1,42 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div class="wrapper-white">
-      <h1 class="text-center">
-        <%= @wine.name %>
-        <small>
-          <%= link_to edit_wine_path(@wine) do %>
-            <i class="fa fa-pencil icon" aria-hidden="true"></i>
-          <% end %>
-        </small>
-      </h1>
-      <p>
-        <% if @wine.photo? %>
-          <%= cl_image_tag @wine.photo.path, class: "img-responsive" %>
-        <% end %>
-      </p>
-      <p>
-        <% if @wine.rated? %>
-          <%= stars(@wine.rating, class: "stars--x2") %>
-          <%= link_to edit_wine_rating_path(@wine) do %>
-            <i class="fa fa-pencil icon" aria-hidden="true"></i>
-          <% end %>
-        <% else %>
-          <%= link_to "Noter ce vin", edit_wine_rating_path(@wine) %>
-        <% end %>
-      </p>
-      <p>
-        <i class="fa fa-glass" aria-hidden="true"></i>
-        Couleur : <%= @wine.color %>
-      </p>
-      <p>
-        <i class="fa fa-map-marker" aria-hidden="true"></i>
-        Appellation : <%= @wine.appellation %>
-      </p>
-      <p>
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        Année : <%= @wine.year %>
-      </p>
-      <p>
-        <i class="fa fa-globe" aria-hidden="true"></i>
-        Pays : <%= @wine.pretty_country %>
-      </p>
-      <%= link_to "< Retour", wines_path, class: "btn btn-danger" %>
-    </div>
-  </div>
+<div class="panel panel--wine panel--top">
+  <h1 class="panel__title">
+    <%= @wine.name %>
+    <small>
+      <%= link_to edit_wine_path(@wine), class: "link--wine" do %>
+        <i class="fa fa-pencil icon" aria-hidden="true"></i>
+      <% end %>
+    </small>
+  </h1>
 </div>
+<div class="panel panel--middle">
+  <p>
+    <% if @wine.photo? %>
+      <%= cl_image_tag @wine.photo.path, class: "img-responsive" %>
+    <% end %>
+  </p>
+  <p>
+    <%= stars(@wine.rating, class: "stars--x2") if @wine.rated? %>
+    <%= link_to edit_wine_rating_path(@wine), class: "link--wine" do %>
+      <i class="fa fa-pencil icon" aria-hidden="true"></i>
+      <%= "Noter ce vin" unless @wine.rated? %>
+    <% end %>
+  </p>
+  <p>
+    <i class="fa fa-glass" aria-hidden="true"></i>
+    Couleur : <%= @wine.color %>
+  </p>
+  <p>
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+    Appellation : <%= @wine.appellation %>
+  </p>
+  <p>
+    <i class="fa fa-calendar" aria-hidden="true"></i>
+    Année : <%= @wine.year %>
+  </p>
+  <p>
+    <i class="fa fa-globe" aria-hidden="true"></i>
+    Pays : <%= @wine.pretty_country %>
+  </p>
+</div>
+<%= link_to "< Retour", wines_path, class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-wine-alt" %>
+

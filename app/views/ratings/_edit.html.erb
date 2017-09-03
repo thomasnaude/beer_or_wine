@@ -1,15 +1,20 @@
-<h1 class="text-center"><%= drink.name %></h1>
-<p><%= rate_this(drink) %></p>
+<div class="panel panel--<%= drink.model_name.to_s.downcase %> panel--top">
+  <h1 class="panel__title">
+    <%= drink.name %>
+  </h1>
+</div>
+ <div class="panel panel--middle">
+    <p><%= rate_this(drink) %></p>
 
-<%= simple_form_for drink do |f| %>
-  <%= f.input(
-    :rating,
-    as: :select,
-    collection: 1..5,
-    input_html: { class: "rating-stars" },
-    wrapper_html: { class: "stars--x2"},
-    label: false
-  ) %>
-  <br>
-  <%= f.button :submit, "Valider", class: "btn btn-danger" %>
+    <%= simple_form_for drink do |f| %>
+      <%= f.input(
+        :rating,
+        as: :select,
+        collection: 1..5,
+        input_html: { class: "rating-stars" },
+        wrapper_html: { class: "stars--x2"},
+        label: false
+      ) %>
+  </div>
+  <%= f.button :submit, "Valider", class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-#{drink.model_name.to_s.downcase}-alt" %>
 <% end %>
