@@ -4,8 +4,7 @@ class Wine < ApplicationRecord
   has_attachment :photo
   belongs_to :user
 
-  scope :appellation_like, -> (appellation) { where("appellation ilike ?", appellation)}
-  pg_search_scope :search_by_appellation, against: :appellation, using: { :tsearch => {:prefix => true} }
+  pg_search_scope :search_by_appellation, against: :appellation, using: { tsearch: {prefix: true} }
 
   def self.colors
     %w(rouge blanc rosé)
