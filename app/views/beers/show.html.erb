@@ -9,11 +9,9 @@
   </h1>
 </div>
 <div class="panel panel--middle">
-  <p>
-    <% if @beer.photo? %>
-      <%= cl_image_tag @beer.photo.path, class: "img-responsive" %>
-    <% end %>
-  </p>
+  <% if @beer.photo? %>
+    <p style="<%= background_image(@beer) %>" class="image-md"></p>
+  <% end %>
   <p>
     <%= stars(@beer.rating, class: "stars--x2") if @beer.rated? %>
     <%= link_to edit_beer_rating_path(@beer), class: "link--beer" do %>

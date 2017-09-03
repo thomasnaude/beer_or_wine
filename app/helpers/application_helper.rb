@@ -9,8 +9,13 @@ module ApplicationHelper
 
   def card_background_image(object)
     return unless object.photo?
-    "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{cl_image_path object.photo.path}');"\
+    "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{cl_image_path object.photo.path, angle: "exif"}');"\
     "background-size: cover;"
+  end
+
+  def background_image(object)
+    return unless object.photo?
+    "background-image: url('#{cl_image_path object.photo.path, angle: "exif"}');"\
   end
 
   def rate_this(drink)
