@@ -2,6 +2,7 @@ class Beer < ApplicationRecord
   include PgSearch
   multisearchable against: [:name, :brewery]
   has_attachment :photo
+  belongs_to :user
 
   STYLES_FILEPATH = Rails.root.join('data', 'beer_styles.yml')
 
