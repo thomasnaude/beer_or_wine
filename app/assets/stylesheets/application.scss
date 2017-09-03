@@ -56,11 +56,11 @@ label {
 }
 .bg-wine {
   background-color: #a31818;
-  background-image: url('glass_wine.svg');
+  background-image: image-url('glass_wine.svg');
 }
 .bg-beer {
   background-color: $beer-light;
-  background-image: url('glass_beer.svg');
+  background-image: image-url('glass_beer.svg');
 }
 .bg-color-beer {
   background-color: $beer-light;
