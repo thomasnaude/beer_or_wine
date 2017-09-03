@@ -1,6 +1,4 @@
 class BeersController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     @beers = Beer.all.order(rating: :desc)
   end

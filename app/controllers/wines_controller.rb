@@ -1,5 +1,4 @@
 class WinesController < ApplicationController
-
   def index
     @wines = Wine.all.order(rating: :desc)
   end
