@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resource :rating, only: :edit, module: :beers
   end
 
+  get 'wines/autocomplete_appellation' => "wines#autocomplete_appellation"
+
   resources :wines do
     resource :rating, only: :edit, module: :wines
   end

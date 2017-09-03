@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+
   def index
     @wines = Wine.all.order(rating: :desc)
   end
@@ -31,6 +32,11 @@ class WinesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def autocomplete_appellation
+    appellations = Wine.search_by_appellation(params[:query]).limit(10).pluck(:appellation)
+    render json: appellations
   end
 
   private

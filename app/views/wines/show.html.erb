@@ -11,7 +11,7 @@
 <div class="panel panel--middle">
   <p>
     <% if @wine.photo? %>
-      <%= cl_image_tag @wine.photo.path, , angle: "exif", class: "img-responsive" %>
+      <%= cl_image_tag @wine.photo.path, angle: "exif", class: "img-responsive" %>
     <% end %>
   </p>
   <p>
