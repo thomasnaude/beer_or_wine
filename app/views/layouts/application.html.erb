@@ -8,7 +8,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
-  <body>
+  <body class="<%= content_for(:body_class) if content_for?(:body_class) %>">
     <div class="content">
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>

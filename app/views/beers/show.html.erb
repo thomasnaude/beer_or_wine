@@ -1,42 +1,37 @@
-<div class="row">
-  <div class="col-xs-12">
-    <div class="wrapper-white">
-      <h1 class="text-center">
-        <%= @beer.name %>
-        <small>
-          <%= link_to edit_beer_path(@beer) do %>
-            <i class="fa fa-pencil icon" aria-hidden="true"></i>
-          <% end %>
-        </small>
-      </h1>
-      <p>
-        <% if @beer.photo? %>
-          <%= cl_image_tag @beer.photo.path, class: "img-responsive" %>
-        <% end %>
-      </p>
-      <p>
-        <% if @beer.rated? %>
-          <%= stars(@beer.rating, class: "stars--x2") %>
-          <%= link_to edit_beer_rating_path(@beer) do %>
-            <i class="fa fa-pencil icon" aria-hidden="true"></i>
-          <% end %>
-        <% else %>
-          <%= link_to "Noter cette bière", edit_beer_rating_path(@beer) %>
-        <% end %>
-      </p>
-      <p>
-        <i class="fa fa-industry" aria-hidden="true"></i>
-        Brasserie : <%= @beer.brewery %>
-      </p>
-      <p>
-        <i class="fa fa-beer" aria-hidden="true"></i>
-        Style : <%= @beer.style %>
-      </p>
-      <p>
-        <i class="fa fa-globe" aria-hidden="true"></i>
-        Pays : <%= @beer.pretty_country %>
-      </p>
-      <%= link_to "< Retour", beers_path, class: "btn btn-danger" %>
-    </div>
-  </div>
+<div class="panel panel--beer panel--top">
+  <h1 class="panel__title">
+    <%= @beer.name %>
+    <small>
+      <%= link_to edit_beer_path(@beer), class: "link--beer" do %>
+        <i class="fa fa-pencil icon" aria-hidden="true"></i>
+      <% end %>
+    </small>
+  </h1>
 </div>
+<div class="panel panel--middle">
+  <p>
+    <% if @beer.photo? %>
+      <%= cl_image_tag @beer.photo.path, class: "img-responsive" %>
+    <% end %>
+  </p>
+  <p>
+    <%= stars(@beer.rating, class: "stars--x2") if @beer.rated? %>
+    <%= link_to edit_beer_rating_path(@beer), class: "link--beer" do %>
+      <i class="fa fa-pencil icon" aria-hidden="true"></i>
+      <%= "Noter cette bière" unless @beer.rated? %>
+    <% end %>
+  </p>
+  <p>
+    <i class="fa fa-industry" aria-hidden="true"></i>
+    Brasserie : <%= @beer.brewery %>
+  </p>
+  <p>
+    <i class="fa fa-beer" aria-hidden="true"></i>
+    Style : <%= @beer.style %>
+  </p>
+  <p>
+    <i class="fa fa-globe" aria-hidden="true"></i>
+    Pays : <%= @beer.pretty_country %>
+  </p>
+</div>
+<%= link_to "< Retour", beers_path, class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-beer-alt" %>

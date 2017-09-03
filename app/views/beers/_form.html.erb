@@ -1,8 +1,10 @@
 <%= simple_form_for beer do |f| %>
-  <%= f.input :name, label: false, placeholder: "Nom" %>
-  <%= f.input :brewery, label: false, placeholder: "Brasseur" %>
-  <%= f.input :style, collection: Beer.styles, label: false, placeholder: "Style" %>
-  <%= f.input :country, priority: [ "France" ], label: false %>
-  <%= f.input :photo, as: :attachinary %>
-  <%= f.button :submit, "Ajouter", class: "btn btn-danger" %>
+  <div class="panel panel--middle">
+    <%= f.input :name, label: "Nom" %>
+    <%= f.input :brewery, label: "Brasseur" %>
+    <%= f.input :style, collection: Beer.styles, label: "Style" %>
+    <%= f.input :country, priority: [ "France" ], label: "Pays" %>
+    <%= f.input :photo, as: :attachinary %>
+  </div>
+  <%= f.button :submit, class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-beer-alt" %>
 <% end %>

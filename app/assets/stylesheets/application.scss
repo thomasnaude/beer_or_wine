@@ -14,6 +14,25 @@
 @import "components/index";
 @import "pages/index";
 
+.font--light {
+  font-weight: 300;
+}
+.margin--bottom-50 {
+  margin-bottom: 50px !important;
+}
+.background--white {
+  background-color: #FFF !important;
+}
+.well {
+  overflow: hidden;
+}
+.well--white {
+  background-color: #FFF;
+}
+label {
+  font-weight: 300;
+}
+
 .split {
   height: 90vh;
   margin-left: -15px;
@@ -42,6 +61,30 @@
 .bg-beer {
   background-color: $beer-light;
   background-image: url('glass_beer.svg');
+}
+.bg-color-beer {
+  background-color: $beer-light;
+}
+.bg-color-beer-alt {
+  background-color: $beer-darker;
+}
+.btn-beer {
+  background-color: $beer-light;
+  color: #FFF;
+}
+.btn-beer-alt {
+  background-color: $beer-darker;
+  color: #FFF;
+}
+.btn-wine-alt {
+  background-color: $wine-light;
+  color: #FFF;
+}
+.link--wine, .link--wine:hover, .link--wine:focus, .link--wine:visited {
+  color: $wine-light;
+}
+.link--beer, .link--beer:hover, .link--beer:focus, .link--beer:visited {
+  color: $beer-darker;
 }
 .card-beer {
   height: 8em;
