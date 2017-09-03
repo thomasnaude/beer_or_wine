@@ -3,6 +3,7 @@ ruby '2.3.3'
 
 gem 'country_select'
 gem 'devise'
+gem 'devise-i18n'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
