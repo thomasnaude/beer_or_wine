@@ -2,6 +2,7 @@ class Wine < ApplicationRecord
   include PgSearch
   multisearchable against: [:name, :appellation]
   has_attachment :photo
+  belongs_to :user
 
   def self.colors
     %w(rouge blanc rosé)
