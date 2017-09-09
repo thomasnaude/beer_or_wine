@@ -34,7 +34,11 @@ class WinesController < ApplicationController
   end
 
   def autocomplete_appellation
-    appellations = Wine.search_by_appellation(params[:query]).limit(10).pluck(:appellation)
+    appellations = Wine.search_by_appellation(params[:query])
+                       .limit(50)
+                       .pluck(:appellation)
+                       .uniq
+                       .first(10)
     render json: appellations
   end
 
