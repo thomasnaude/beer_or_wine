@@ -6,7 +6,7 @@
  <div class="panel panel--middle">
     <p><%= rate_this(drink) %></p>
 
-    <%= simple_form_for drink do |f| %>
+    <%= simple_form_for drink, html: { remote: true, id: "form-rating" } do |f| %>
       <%= f.input(
         :rating,
         as: :select,
