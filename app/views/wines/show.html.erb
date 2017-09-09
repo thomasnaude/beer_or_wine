@@ -23,19 +23,23 @@
   </p>
   <p>
     <i class="fa fa-glass" aria-hidden="true"></i>
-    Couleur : <%= @wine.color %>
+    Couleur : <span class="font--light"><%= @wine.color %></span>
   </p>
   <p>
     <i class="fa fa-map-marker" aria-hidden="true"></i>
-    Appellation : <%= @wine.appellation %>
+    Appellation : <span class="font--light"><%= @wine.appellation %></span>
   </p>
   <p>
     <i class="fa fa-calendar" aria-hidden="true"></i>
-    Année : <%= @wine.year %>
+    Année : <span class="font--light"><%= @wine.year %></span>
   </p>
   <p>
     <i class="fa fa-globe" aria-hidden="true"></i>
-    Pays : <%= @wine.pretty_country %>
+    Pays : <span class="font--light"><%= @wine.pretty_country %></span>
+  </p>
+  <p>
+    <i class="fa fa-comment" aria-hidden="true"></i>
+    Commentaires : <span class="font--light"><%= @wine.comment %></span>
   </p>
 </div>
 <%= link_to "< Retour", wines_path, class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-wine-alt" %>
