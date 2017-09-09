@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'drink/index'
 
+  get 'beers/autocomplete_brewery' => "beers#autocomplete_brewery"
+
   resources :beers do
     resource :rating, only: :edit, module: :beers
   end

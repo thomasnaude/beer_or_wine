@@ -33,6 +33,15 @@ class BeersController < ApplicationController
     end
   end
 
+  def autocomplete_brewery
+    breweries = Beer.search_by_brewery(params[:query])
+                       .limit(50)
+                       .pluck(:brewery)
+                       .uniq
+                       .first(10)
+    render json: breweries
+  end
+
   private
 
   def find_beer

@@ -1,7 +1,7 @@
 $(function() {
-  $("input[data-autocomplete='appellation']").autocomplete({
+  $("input[data-autocomplete='true']").autocomplete({
     source: function (request, response) {
-      var url = $("input[data-autocomplete='appellation']").data('url');
+      var url = $("input[data-autocomplete='true']").data('url');
       $.get(url, {
           query: request.term
       }, function (data) {
