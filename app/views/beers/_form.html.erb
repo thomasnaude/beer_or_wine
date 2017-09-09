@@ -5,6 +5,7 @@
     <%= f.input :style, collection: Beer.styles, label: "Style" %>
     <%= f.input :country, priority: [ "France" ], label: "Pays" %>
     <%= f.input :photo, as: :attachinary %>
+    <%= f.input :comment, label: "Commentaires" %>
   </div>
   <%= f.button :submit, class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-beer-alt" %>
 <% end %>

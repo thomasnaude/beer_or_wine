@@ -21,15 +21,19 @@
   </p>
   <p>
     <i class="fa fa-industry" aria-hidden="true"></i>
-    Brasserie : <%= @beer.brewery %>
+    Brasserie : <span class="font--light"><%= @beer.brewery %></span>
   </p>
   <p>
     <i class="fa fa-beer" aria-hidden="true"></i>
-    Style : <%= @beer.style %>
+    Style : <span class="font--light"><%= @beer.style %></span>
   </p>
   <p>
     <i class="fa fa-globe" aria-hidden="true"></i>
-    Pays : <%= @beer.pretty_country %>
+    Pays : <span class="font--light"><%= @beer.pretty_country %></span>
+  </p>
+  <p>
+    <i class="fa fa-comment" aria-hidden="true"></i>
+    Commentaires : <span class="font--light"><%= @beer.comment %></span>
   </p>
 </div>
 <%= link_to "< Retour", beers_path, class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-beer-alt" %>
