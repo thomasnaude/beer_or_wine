@@ -1,7 +1,16 @@
 <%= simple_form_for beer do |f| %>
   <div class="panel panel--middle">
     <%= f.input :name, label: "Nom" %>
-    <%= f.input :brewery, label: "Brasseur" %>
+    <%= f.input(
+      :brewery,
+      label: "Brasseur",
+      input_html: {
+        data: {
+          autocomplete: true,
+          url: beers_autocomplete_brewery_path
+        }
+      }
+    ) %>
     <%= f.input :style, collection: Beer.styles, label: "Style" %>
     <%= f.input :country, priority: [ "France" ], label: "Pays" %>
     <%= f.input :photo, as: :attachinary %>

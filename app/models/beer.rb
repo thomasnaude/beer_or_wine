@@ -4,6 +4,8 @@ class Beer < ApplicationRecord
   has_attachment :photo
   belongs_to :user
 
+  pg_search_scope :search_by_brewery, against: :brewery, using: { tsearch: { prefix: true } }
+
   STYLES_FILEPATH = Rails.root.join('data', 'beer_styles.yml')
 
   def self.styles
