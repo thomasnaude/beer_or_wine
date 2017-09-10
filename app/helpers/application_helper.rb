@@ -2,8 +2,8 @@ module ApplicationHelper
   def stars(rating, options = {})
     return if rating.nil?
     stars = []
-    rating.times { stars << '<i class="fa fa-star stars #{options[:class]}" aria-hidden="true"></i>' }
-    (5 - rating).times { stars << '<i class="fa fa-star stars--o #{options[:class]}" aria-hidden="true"></i>' }
+    rating.times { stars << "<i class='fa fa-star stars #{options[:class]}'' aria-hidden='true'></i>" }
+    (5 - rating).times { stars << "<i class='fa fa-star stars--o #{options[:class]}' aria-hidden='true'></i>" }
     stars.join().html_safe
   end
 
@@ -24,5 +24,10 @@ module ApplicationHelper
     elsif drink.is_a?(Wine)
       "Noter ce vin"
     end
+  end
+
+  def submit_label(object)
+    object = object.is_a?(Array) ? object.last : object
+    object.persisted? ? "Modifier" : "Ajouter"
   end
 end

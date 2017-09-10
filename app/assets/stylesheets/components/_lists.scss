@@ -1,0 +1,21 @@
+.dl-vintages {
+  &__year {
+    float: left;
+    width: 60px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+  }
+  &__stock {
+    margin-left: 80px;
+    font-weight: 300;
+    display: flex;
+    align-item: center;
+  }
+  &__bottle-img {
+    margin: 0 15px 0 5px;
+  }
+}
