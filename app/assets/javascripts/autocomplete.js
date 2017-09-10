@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener("turbolinks:load", function() {
   $("input[data-autocomplete='true']").autocomplete({
     source: function (request, response) {
       var url = $("input[data-autocomplete='true']").data('url');
