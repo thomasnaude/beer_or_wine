@@ -6,4 +6,5 @@
 //= require attachinary
 //= require jquery-bar-rating
 //= require jquery-ui/autocomplete
+//= require turbolinks
 //= require_tree .

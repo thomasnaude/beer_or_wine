@@ -1,4 +1,4 @@
-<%= simple_form_for wine do |f| %>
+<%= simple_form_for wine, html: { remote: true, id: "form-wine" } do |f| %>
   <div class="panel panel--middle">
     <%= f.input :name, label: "Nom" %>
     <%= f.input(
