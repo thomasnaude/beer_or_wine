@@ -76,6 +76,10 @@ label {
   background-color: $beer-darker;
   color: #FFF;
 }
+.btn-wine {
+  background-color: #a31818;
+  color: #FFF;
+}
 .btn-wine-alt {
   background-color: $wine-light;
   color: #FFF;
@@ -110,6 +114,9 @@ label {
   width: 100%;
   height: 35vh;
 }
+.image--xs {
+  height: 25px
+}
 .ui-autocomplete {
   position: absolute;
   top: 100%;
@@ -129,6 +136,4 @@ label {
 .ui-helper-hidden-accessible {
   display: none;
 }
-
-
 

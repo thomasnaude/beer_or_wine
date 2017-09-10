@@ -30,13 +30,10 @@
     Appellation : <span class="font--light"><%= @wine.appellation %></span>
   </p>
   <p>
-    <i class="fa fa-calendar" aria-hidden="true"></i>
-    Année : <span class="font--light"><%= @wine.year %></span>
-  </p>
-  <p>
     <i class="fa fa-globe" aria-hidden="true"></i>
     Pays : <span class="font--light"><%= @wine.pretty_country %></span>
   </p>
+  <%= render "vintages/index", wine: @wine %>
   <p>
     <i class="fa fa-comment" aria-hidden="true"></i>
     Commentaires : <span class="font--light"><%= @wine.comment %></span>

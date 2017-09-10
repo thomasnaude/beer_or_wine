@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :wines do
     resource :rating, only: :edit, module: :wines
+    resources :vintages, only: [:new, :create, :edit, :update, :destroy], shallow: true
   end
 
   resources :drinks, only: :index

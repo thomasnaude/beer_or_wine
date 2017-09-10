@@ -1,0 +1,24 @@
+<%= simple_form_for object, html: { remote: true, id: "form-vintage" } do |f| %>
+  <div class="panel panel--middle">
+    <%= f.input :year, label: "Année" %>
+    <%= f.input :stock, input_html: { min: 0 }, label: "Stock" %>
+  </div>
+  <%= f.button(
+    :submit,
+    submit_label(object),
+    class: "btn btn-lg btn-block margin--bottom-50 panel__btn panel--bottom btn-wine-alt"
+  ) %>
+<% end %>
+
+<% if object.is_a?(Vintage) && object.persisted? %>
+  <%= link_to(
+    vintage_path(object),
+    method: :delete,
+    remote: true,
+    class: "btn btn-lg btn-block btn-wine",
+    data: { confirm: "Etes-vous sur de vouloir supprimer ces stocks ?"}
+  ) do %>
+    <i class="fa fa-times" aria-hidden="true"></i>
+    Supprimer
+  <% end %>
+<% end %>
