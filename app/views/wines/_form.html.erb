@@ -12,9 +12,7 @@
       }
     ) %>
     <%= f.input :color, collection: Wine.colors, label: "Couleur" %>
-    <%= f.input :year, label: "Année" %>
     <%= f.input :country, priority: [ "France" ], label: "Pays" %>
-    <%= f.input :stock, input_html: { min: 0 }, label: "Stock" %>
     <%= f.input :photo, as: :attachinary %>
     <%= f.input :comment, label: "Commentaires" %>
   </div>
