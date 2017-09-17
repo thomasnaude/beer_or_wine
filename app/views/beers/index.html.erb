@@ -5,6 +5,11 @@
     </div>
   <% end %>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <%= paginate @beers %>
+  </div>
+</div>
 <%= link_to new_beer_path, class: "btn btn-beer-alt btn-add" do %>
   <span>+</span>
 <% end %>

@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
   def index
-    @beers = Beer.all.order(rating: :desc)
+    @beers = Beer.order(rating: :desc).page(params[:page])
   end
 
   def show

@@ -5,7 +5,11 @@
     </div>
   <% end %>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <%= paginate @wines %>
+  </div>
+</div>
 <%= link_to new_wine_path, class: "btn btn-wine-alt btn-add" do %>
   <span>+</span>
 <% end %>
-

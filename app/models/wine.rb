@@ -7,6 +7,8 @@ class Wine < ApplicationRecord
 
   pg_search_scope :search_by_appellation, against: :appellation, using: { tsearch: {prefix: true} }
 
+  paginates_per 5
+
   def self.colors
     %w(rouge blanc rosé)
   end
