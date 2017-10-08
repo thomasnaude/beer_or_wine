@@ -136,4 +136,12 @@ label {
 .ui-helper-hidden-accessible {
   display: none;
 }
-
+.pagination li {
+  &.active a {
+    background-color: $grey;
+    border-color: $grey;
+  }
+  & a {
+    color: $grey;
+  }
+}

@@ -1,6 +1,10 @@
 class WinesController < ApplicationController
   def index
-    @wines = Wine.all.order(rating: :desc)
+    @wines = Wine.order(rating: :desc).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

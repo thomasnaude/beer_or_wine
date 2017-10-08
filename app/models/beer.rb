@@ -6,6 +6,8 @@ class Beer < ApplicationRecord
 
   pg_search_scope :search_by_brewery, against: :brewery, using: { tsearch: { prefix: true } }
 
+  paginates_per 5
+
   STYLES_FILEPATH = Rails.root.join('data', 'beer_styles.yml')
 
   def self.styles
