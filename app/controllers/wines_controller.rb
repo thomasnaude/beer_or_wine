@@ -1,6 +1,6 @@
 class WinesController < ApplicationController
   def index
-    @wines = Wine.order(rating: :desc).page(params[:page])
+    @wines = Wine.includes(:photo_files).order(rating: :desc).page(params[:page])
     respond_to do |format|
       format.html
       format.js

@@ -7,4 +7,5 @@
 //= require jquery-bar-rating
 //= require jquery-ui/autocomplete
 //= require turbolinks
+//= require bindWithDelay
 //= require_tree .

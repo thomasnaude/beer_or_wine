@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
   def index
-    @beers = Beer.order(rating: :desc).page(params[:page])
+    @beers = Beer.includes(:photo_files).order(rating: :desc).page(params[:page])
     respond_to do |format|
       format.html
       format.js
