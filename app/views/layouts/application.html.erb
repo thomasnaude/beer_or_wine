@@ -13,11 +13,11 @@
   </head>
   <body class="<%= content_for(:body_class) if content_for?(:body_class) %>">
     <div class="content">
-      <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
-      <div class="container">
+      <div class="container margin--bottom-nav">
         <%= yield %>
       </div>
+      <%= render 'shared/bottom_nav' %>
     </div>
   </body>
 </html>

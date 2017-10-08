@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'search' => 'pages#search'
+
   get 'drink/index'
 
   get 'beers/autocomplete_brewery' => "beers#autocomplete_brewery"
