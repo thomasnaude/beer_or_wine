@@ -10,9 +10,9 @@
   <% @drinks.each do |drink| %>
     <div class="col-xs-12">
       <% if drink.searchable_type == "Beer" %>
-        <%= render 'beers/card', beer: drink.searchable %>
+        <%= render 'beers/card', drink: drink.searchable %>
       <% elsif drink.searchable_type == "Wine" %>
-        <%= render 'wines/card', wine: drink.searchable %>
+        <%= render 'wines/card', drink: drink.searchable %>
       <% end %>
     </div>
   <% end %>
