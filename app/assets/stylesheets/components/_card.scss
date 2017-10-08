@@ -28,7 +28,7 @@
 .card-description h2 {
   font-size: 24px;
   font-weight: 300;
-  color: rgba(0,0,0,0.6);
+  color: $grey;
   text-shadow: none;
 }
 .card-description p {
@@ -56,4 +56,5 @@
   height: 80px;
   position: absolute;
   bottom: 0;
+  border: 1px solid #FFF;
 }

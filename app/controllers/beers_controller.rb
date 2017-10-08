@@ -1,6 +1,10 @@
 class BeersController < ApplicationController
   def index
-    @beers = Beer.all.order(rating: :desc)
+    @beers = Beer.order(rating: :desc).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

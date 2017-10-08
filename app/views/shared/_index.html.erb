@@ -1,0 +1,11 @@
+<div class="row" id="drinks">
+  <%= render "shared/cards", drinks: drinks, name: name %>
+</div>
+<div class="row">
+  <div class="col-xs-12" data-scroll="infinite">
+    <%= paginate drinks %>
+  </div>
+</div>
+<%= link_to path_to_new, class: "btn btn-#{name}-alt btn-add" do %>
+  <span>+</span>
+<% end %>

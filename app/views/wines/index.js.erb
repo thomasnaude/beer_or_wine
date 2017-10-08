@@ -1,0 +1,7 @@
+$('#drinks').append('<%= j render "shared/cards", drinks: @wines, name: "wine" %>');
+<% if @wines.next_page %>
+  $('.pagination').replaceWith('<%= j paginate @wines %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>
